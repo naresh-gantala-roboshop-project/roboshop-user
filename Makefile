@@ -7,8 +7,8 @@ run:
 	MONGO_URL=mongodb://localhost:27017/users node server.js
 
 docker-build:
-	docker build -t nareshroboshop.azurecr.io/roboshop-user .
-	docker push nareshroboshop.azurecr.io/roboshop-user
+	docker build -t nareshroboshop.azurecr.io/roboshop-user:${IMAGE_TAG} .
+	docker push nareshroboshop.azurecr.io/roboshop-user:${IMAGE_TAG}
 
 db-init:
 	mongosh --host $${MONGO_HOST:-localhost} < db/master-data.js
